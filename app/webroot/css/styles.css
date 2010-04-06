@@ -1,0 +1,156 @@
+/**
+ * Kevin's BBQ Joints
+ * v0.1 3/25/2010 Christine Cheung
+ */
+
+@import "reset.css";
+
+body {
+	font: .85em/1.5em "Helvetica Neue", Helvetica, Arial, sans-serif; 
+	background: #bfbcb4 url(../img/bg.png);
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+
+/**
+ * Selectors
+ */
+
+#container {
+	margin: 0 auto;
+	width: 960px;
+	text-align: left;
+	background: #d6d3ca;
+	padding: 0;
+}
+
+#header-container {
+	background: #ecebe7;
+	padding: 15px 0 10px 0;
+}
+#header {
+	background: url(../img/header.png) top left no-repeat;
+	width: 469px;
+	height: 124px;
+}
+#header h1 {
+	text-indent: -9999px;
+}
+
+/* Navigation Top */
+#nav {
+	height: 40px;
+	background: #951a1a;
+}
+#nav ul {
+	padding: 9px 0 0 27px;
+}
+#nav ul li {
+	margin: 0 25px 0 0;
+	display: inline;
+	text-transform: uppercase;
+}
+#nav ul li a {
+	color: #e9eae3;
+	letter-spacing: .07em;
+	text-decoration: none;
+}
+
+/* Search Bar */
+#joint-search {
+	height: 43px;
+	background: #382810;
+	padding: 10px 0 0 40px;
+}
+#joint-search-bar {
+	width: 775px;
+	height: 45px;
+	background: url(../img/joint_search.png) top left no-repeat;
+}
+
+/* Content */
+#content-container {
+	width: 756px;
+	margin: 10px 10px 15px 10px;
+	float: left;
+}
+#content-top {
+	width: 736px;
+	height: 46px;
+	background: url(../img/content_top.png) top left no-repeat;
+	padding: 10px 0 0 20px;
+}
+#content-top h2 {
+	font: bold 1.9em Arial Black;
+	text-transform: uppercase;
+}
+#content {
+	background: #fbfaf7;
+	margin-top: -1px;
+	padding: 15px 0;
+}
+#content table tr td {
+	padding: 7px 27px;
+}
+#content table a {
+	color: #000;
+	text-decoration: none;
+}
+#content-footer {
+	width: 756px;
+	height: 14px;
+	background: url(../img/content_footer.png) top left no-repeat;
+}
+
+/* Ad Skyscraper Right */
+#ad-right {
+	width: 150px;
+	height: 570px;
+	color: #888;
+	font-style: italic;
+	border: 1px solid #999;
+	padding: 5px;
+	margin: 10px 15px 0 0;
+	float: right;
+}
+
+/* Front Promo Boxes */
+.promote-box {
+	width: 246px;
+	height: 167px;
+	background: url(../img/promo_box.png) top left no-repeat;
+	float: left;
+	margin: 0 0 15px 10px;
+}
+
+/* Footer */
+#footer {
+	font-size: .8em;
+	font-weight: bold;
+	text-transform: uppercase;
+	height: 33px;
+	background: #951a1a;
+	padding: 12px 0 0 0;
+	clear: both;
+}
+ul#nav-footer {
+	width: 525px;
+	margin: 0 0 0 25px;
+	float: left;
+}
+ul#nav-footer li {
+	display: inline;
+	margin: 0 10px 0 0;
+}
+ul#nav-footer li a {
+	color: #000;
+	text-decoration: none;
+}
+
+#copyright {
+	margin: 0 25px 0 0;
+	text-align: right;
+	float: right;
+}

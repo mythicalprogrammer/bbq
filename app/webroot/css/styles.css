@@ -13,6 +13,18 @@ body {
 	padding: 0;
 }
 
+h3 {
+	font-weight: bold;
+	font-size: 1.5em;
+}
+
+a {
+	text-decoration: none;
+}
+
+p {
+	margin: 0 0 10px 0;
+}
 
 /**
  * Selectors
@@ -34,9 +46,12 @@ body {
 	background: url(../img/header.png) top left no-repeat;
 	width: 469px;
 	height: 124px;
-}
-#header h1 {
 	text-indent: -9999px;
+}
+#header a {
+	width: 469px;
+	height: 124px;
+	display: block;
 }
 
 /* Navigation Top */
@@ -83,13 +98,13 @@ body {
 	padding: 10px 0 0 20px;
 }
 #content-top h2 {
-	font: bold 1.9em Arial Black;
+	font: bold 1.9em Arial Black, Arial, Helvetica;
 	text-transform: uppercase;
 }
 #content {
 	background: #fbfaf7;
 	margin-top: -1px;
-	padding: 15px 0;
+	padding: 15px 20px;
 }
 #content table tr td {
 	padding: 7px 27px;
@@ -112,7 +127,7 @@ body {
 	font-style: italic;
 	border: 1px solid #999;
 	padding: 5px;
-	margin: 10px 15px 0 0;
+	margin: 10px 15px 20px 0;
 	float: right;
 }
 

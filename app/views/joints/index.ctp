@@ -20,7 +20,7 @@ echo "<br/>";
 		}
 		echo "<small>[" . $html->link('Edit', array('action'=>'edit', 'id'=>$joint['Joint']['id'])) . "]</small><br/>";
 		echo "<br/>";
-				
+
 	}
 
 echo "<p>(" . $html->link("Add a Joint", "add") . ")</p>";

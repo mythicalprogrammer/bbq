@@ -5,7 +5,9 @@
 <head>
 	<?php echo $html->charset(); echo "\n" ?>
 	<?php echo $html->css('styles'); echo "\n"  ?>
-	<title>Kevin's BBQ Joints</title>	
+	<title>Kevin's BBQ Joints</title>
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA_iwTMO9zYpmDab6qmz5UzRTpJZEScOwrFi7gBYjoJDitheTOshQ6-RQZI3cQSkEikMuau0NH2wDXcg" type="text/javascript"></script> 
+
 </head>
 
 <body>

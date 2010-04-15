@@ -1,6 +1,8 @@
 <?php
 
-echo "<p>(" . $html->link("Add a Joint", "add") . ")</p>";
+echo "<h3>" . $html->link("List States", "/state") . "</h3>";
+
+echo "<br/>";
 
 	foreach($joints as $joint) {
 		
@@ -20,4 +22,8 @@ echo "<p>(" . $html->link("Add a Joint", "add") . ")</p>";
 		echo "<br/>";
 				
 	}
+
+echo "<p>(" . $html->link("Add a Joint", "add") . ")</p>";
+
+
 ?>

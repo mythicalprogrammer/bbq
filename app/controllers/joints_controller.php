@@ -3,6 +3,7 @@ class JointsController extends AppController {
 
 	var $name = 'Joints';
 	var $pageTitle = 'BBQ Joints';
+	var $scaffold;
 
 	function index() {
 		$joints = $this->set('joints',
@@ -10,6 +11,18 @@ class JointsController extends AppController {
 				array('order' => array('state' => 'ASC'))
 			)
 		);
+
+	}
+	
+	function showState($statename) {
+		if($statename && $thestate = $this->State->findByName($statename))
+		{
+			$this->set('state',$thestate);//debug $thestate you'll find data you need
+		}
+		else
+		{
+			$this->Session->setFlash("something wrong happens!");
+		}
 	}
 	
 	function view($id = null) {

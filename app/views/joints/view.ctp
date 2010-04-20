@@ -1,5 +1,8 @@
 
-<h3><?php echo $joint['Joint']['name']?></h3>
+<?php $jointName =  Sanitize::paranoid($joint['Joint']['name'], array('encode' => false));
+?>
+
+<h3><?php echo $jointName ?></h3>
 <?php
 echo $joint['Joint']['address'] . "<br/>";
 echo $joint['Joint']['city'] . ", ";
@@ -45,7 +48,7 @@ map.setCenter(new GLatLng(<?php echo $long ?>,<?php echo $lat ?>),12);
 var point = new GLatLng(<?php echo $long ?>,<?php echo $lat ?>);
 var marker = createMarker(point)
 map.addOverlay(marker);
-marker.openInfoWindowHtml("<?php echo $joint['Joint']['name']?>");
+marker.openInfoWindowHtml("<?php echo $jointName?>");
 
 }
 </script>

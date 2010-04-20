@@ -4,10 +4,12 @@ echo "<h3>" . $html->link("List States", "/state") . "</h3>";
 
 echo "<br/>";
 
+
 	foreach($joints as $joint) {
 		
+		$jointName =  Sanitize::paranoid($joint['Joint']['name'], array('encode' => false));
 		
-		echo "<b>" . $html->link($joint['Joint']['name'], array('controller' => 'joints', 'action' => 'view', $joint['Joint']['id'])) . "</b><br/>";
+		echo "<b>" . $html->link($jointName, array('controller' => 'joints', 'action' => 'view', $joint['Joint']['id'])) . "</b><br/>";
 		echo $joint['Joint']['address'] . "<br/>";
 		echo $joint['Joint']['city'] . ", ";
 		echo $joint['Joint']['state'] . " ";

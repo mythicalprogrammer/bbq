@@ -5,7 +5,10 @@ echo "<h3>" . $html->link("States", "/state") . " > " . $state["State"]["name"] 
 echo "<br/>";
 
 foreach ($state["Joints"] as $joint) {
-	echo "<b>" . $html->link($joint['name'], array('controller' => 'joints', 'action' => 'view', $joint['id'])) . "</b><br/>";
+	
+	$jointName =  Sanitize::paranoid($joint['name'], array('encode' => false));
+	// $joint['name']
+	echo "<b>" . $html->link($jointName, array('controller' => 'joints', 'action' => 'view', $joint['id'])) . "</b><br/>";
 	echo $joint['address'] . "<br/>";
 	echo $joint['city'] . ", ";
 	echo $joint['state'] . " ";

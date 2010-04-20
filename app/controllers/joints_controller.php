@@ -1,9 +1,12 @@
 <?php
+
+App::import('Sanitize');
+
 class JointsController extends AppController {
 
 	var $name = 'Joints';
 	var $pageTitle = 'BBQ Joints';
-	var $scaffold;
+
 
 	function index() {
 		$joints = $this->set('joints',

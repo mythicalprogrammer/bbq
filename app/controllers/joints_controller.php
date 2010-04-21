@@ -17,17 +17,6 @@ class JointsController extends AppController {
 
 	}
 	
-	function showState($statename) {
-		if($statename && $thestate = $this->State->findByName($statename))
-		{
-			$this->set('state',$thestate);//debug $thestate you'll find data you need
-		}
-		else
-		{
-			$this->Session->setFlash("something wrong happens!");
-		}
-	}
-	
 	function view($id = null) {
 		$this->Joint->id = $id;
 		$this->set('joint', $this->Joint->read());

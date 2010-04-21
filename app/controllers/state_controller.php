@@ -14,9 +14,9 @@ class StateController extends AppController {
 	}
 
 	function showState($statename) {
-		if($statename && $thestate = $this->State->findByName($statename))
+		if($statename && $thestate = $this->State->findByState_abbr($statename))
 		{
-			$this->set('state',$thestate);//debug $thestate you'll find data you need
+			$this->set('state',$thestate);
 		}
 		else
 		{

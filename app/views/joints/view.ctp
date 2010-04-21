@@ -1,15 +1,21 @@
 
-<?php $jointName =  Sanitize::paranoid($joint['Joint']['name'], array('encode' => false));
+<?php
+$jointName =  Sanitize::paranoid($joint['Joint']['name'], array('encode' => false));
+$this->pageTitle = $jointName;
 ?>
 
-<h3><?php echo $jointName ?></h3>
 <?php
 echo $joint['Joint']['address'] . "<br/>";
 echo $joint['Joint']['city'] . ", ";
 echo $joint['Joint']['state'] . " ";
 echo $joint['Joint']['zip'] . "<br/>";
 echo $joint['Joint']['phone'] . "<br/>";
-echo $joint['Joint']['url'] . "<br/>";
+if(!substr_count($joint['Joint']['url'], "http://")) {
+	echo $html->link($joint['Joint']['url'], "http://" . $joint['Joint']['url']) . "<br/>";
+}
+else {
+	echo $html->link($joint['Joint']['url'], $joint['Joint']['url']) . "<br/>";
+}
 
 $addr = $joint['Joint']['address'] . " " . $joint['Joint']['city'] . " " .  $joint['Joint']['state'];
 $addr = str_replace(" ", "+", $addr);

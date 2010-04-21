@@ -3,14 +3,14 @@
 
 $this->pageTitle = "BBQ Joints by State";
 
-echo "			<table align=\"center\">\n";
+echo "			<table id=\"states\">\n";
 
 foreach($states as $key => $state) {
 	
-	if(!($key % 5) && $key != 0) {
+	if(!($key % 4) && $key != 0) {
 		echo "				</tr>\n				<tr>\n";
 	}
-	else if(!($key % 5)) {
+	else if(!($key % 4)) {
 		echo "				<tr>\n";
 	}
 

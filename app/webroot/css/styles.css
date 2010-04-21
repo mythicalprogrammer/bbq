@@ -19,7 +19,11 @@ h3 {
 }
 
 a {
+	color: #951a1a;
 	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
 }
 
 p {
@@ -106,20 +110,33 @@ p {
 	margin-top: -1px;
 	padding: 15px 20px;
 }
-#content table tr td {
-	padding: 7px 27px;
+#content #states {
+	margin: auto;
 }
-#content table a {
-	color: #000;
+#content #states tr td {
+	padding: 12px 20px;
+}
+#content #states a {
+	font-size: 1.3em;
 	text-decoration: none;
 }
-#content table a:hover {
+#content #states a:hover {
 	text-decoration: underline;
 }
 #content-footer {
 	width: 756px;
 	height: 14px;
 	background: url(../img/content_footer.png) top left no-repeat;
+}
+
+#content ul #joints {
+	list-style: none;
+}
+#content #joints li a {
+	font-size: 1.2em;
+}
+#content #joints li {
+	margin: 10px;
 }
 
 /* Ad Skyscraper Right */

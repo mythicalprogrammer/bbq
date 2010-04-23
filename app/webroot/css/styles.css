@@ -16,6 +16,7 @@ body {
 h3 {
 	font-weight: bold;
 	font-size: 1.5em;
+	margin: 0 0 5px 0;
 }
 
 a {
@@ -137,6 +138,36 @@ p {
 }
 #content #joints li {
 	margin: 10px;
+}
+
+/* Flash Message */
+#flashMessage {
+	font-style: italic;
+	border: 1px solid #666;
+	padding: 5px;
+	margin: 0 0 5px 0;
+}
+
+.input {
+	padding: 0 0 5px 0;
+}
+.input label {
+	padding: 0 10px 0 0;
+}
+.login {
+	width: 250px;
+	border: 1px solid #999;
+	padding: 15px 10px 10px 10px;
+}
+.login legend {
+	font-weight: bold;
+	padding: 0 0 10px 0;
+}
+.login input {
+	float: right;
+}
+.login button {
+	float: right;
 }
 
 /* Ad Skyscraper Right */

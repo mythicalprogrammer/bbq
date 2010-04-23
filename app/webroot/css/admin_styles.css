@@ -1,0 +1,27 @@
+
+.adminPanel li {
+	list-style: square;
+	margin: 0 0 0 20px;
+}
+
+.adminJointEdit {
+	border: 1px solid #999;
+	width: 300px;
+	padding: 10px;
+	text-align: right;	
+}
+.adminJointEdit .input {
+	padding: 5px 0;
+}
+.adminJointEdit input {
+	float: right;
+}
+.adminJointEdit .submit {
+	padding: 5px 0;
+
+}
+
+.error-message {
+	color: red;
+	clear: both;
+}

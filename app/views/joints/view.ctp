@@ -1,21 +1,48 @@
-
 <?php
 $jointName =  Sanitize::paranoid($joint['Joint']['name'], array('encode' => false));
-$this->pageTitle = $jointName;
-?>
 
-<?php
-echo $joint['Joint']['address'] . "<br/>";
-echo $joint['Joint']['city'] . ", ";
-echo $joint['Joint']['state'] . " ";
-echo $joint['Joint']['zip'] . "<br/>";
-echo $joint['Joint']['phone'] . "<br/>";
-if(!substr_count($joint['Joint']['url'], "http://")) {
-	echo $html->link($joint['Joint']['url'], "http://" . $joint['Joint']['url']) . "<br/>";
+// Reference States Table
+foreach($states as $state) {
+	if ($state['Statelist']['id'] == $joint['Joint']['state_id']) {
+		$jointState = $state['Statelist']['name'];
+		$jointStateAbbr = $state['Statelist']['state_abbr'];
+	}
 }
-else {
-	echo $html->link($joint['Joint']['url'], $joint['Joint']['url']) . "<br/>";
+
+$this->pageTitle = $html->link("BBQ Joints", "/joints") . " > " . $html->link($jointState, "/joints/" . strtolower($jointStateAbbr));
+
+echo "<h3>" . $jointName . "</h3>\n";
+
+echo $joint['Joint']['address'] . "<br/>\n";
+echo "			" . $joint['Joint']['city'] . ", ";
+// Reference States Table
+foreach($states as $state) {
+	if ($state['Statelist']['id'] == $joint['Joint']['state_id']) {
+		echo $state['Statelist']['state_abbr'] . " ";
+	}
 }
+echo $joint['Joint']['zip'] . "<br/>\n";
+if ($joint['Joint']['phone']) {
+	echo "			" . $joint['Joint']['phone'] . "<br/>\n";
+}
+if ($joint['Joint']['url']) {
+	echo "			";
+	// url parsing
+	if(!substr_count($joint['Joint']['url'], "http://")) {
+		echo $html->link($joint['Joint']['url'], "http://" . $joint['Joint']['url']) . "<br/>\n";
+	}
+	else {
+		echo $html->link($joint['Joint']['url'], $joint['Joint']['url']) . "<br/>\n";
+	}
+}
+// admin edit
+
+if ($userCheck) {
+	echo "<br/>\n";
+	echo "[ " . $html->link('Edit this Joint', array('admin' => true, 'action'=>'edit', 'id'=>$joint['Joint']['id'])) . " ]<br/>";
+	echo "<br/>";
+}
+
 
 $addr = $joint['Joint']['address'] . " " . $joint['Joint']['city'] . " " .  $joint['Joint']['state'];
 $addr = str_replace(" ", "+", $addr);
@@ -30,8 +57,8 @@ list($http, $http2, $long, $lat) = split(",", $csv);
 
 ?>
 
-<br/>
-<div id="map" style="width: 500px; height: 400px"></div> 
+			<br/>
+			<div id="map" style="width: 500px; height: 400px"></div> 
 
 
 <script type="text/javascript"> 

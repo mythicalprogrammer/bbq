@@ -22,7 +22,7 @@ class UsersController extends AppController {
 
 		// redirect user if already logged in
 		if( $this->Session->check('User') ) {
-			$this->redirect(array('controller'=>'dashboard','action'=>'index','admin'=>true));
+			$this->redirect(array('controller'=>'panel','action'=>'index','admin'=>true));
 		}
 
 		if(!empty($this->data)) {
@@ -40,7 +40,7 @@ class UsersController extends AppController {
 					// save to session
 					$this->Session->write('User',$result);
 					$this->Session->setFlash('You have successfully logged in','flash_good');
-					$this->redirect(array('controller'=>'dashboard','action'=>'index','admin'=>true));
+					$this->redirect(array('controller'=>'panel','action'=>'index','admin'=>true));
 				} else {
 					$this->Session->setFlash('Either your Username of Password is incorrect','flash_bad');
 				}

@@ -23,4 +23,6 @@ foreach($states as $key => $state) {
 
 echo "				</tr>\n			</table>";
 
+echo "<br/>";
+
 ?>

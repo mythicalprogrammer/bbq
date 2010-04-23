@@ -6,10 +6,9 @@ class StateController extends AppController {
 
 	var $name = "States";
 	var $pageTitle = "States";
-	var $scaffold;
-	
-	function index() {
 
+
+	function index() {
 		$this->set('states', $this->State->find('all'));
 	}
 

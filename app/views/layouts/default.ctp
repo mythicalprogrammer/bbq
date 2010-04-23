@@ -39,13 +39,7 @@
 		</div>
 
 		<div id="content">
-			
-			<?php
-			if ($session->check('Message.flash')) {
-				$session->flash();
-			}
-			?>
-			
+						
 			<?php echo $content_for_layout; ?>
 
 

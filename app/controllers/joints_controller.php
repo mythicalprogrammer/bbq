@@ -31,7 +31,7 @@ class JointsController extends AppController {
 		
 		if (!empty($this->data)) {
 			if ($this->Joint->save($this->data)) {
-				$this->Session->setFlash('The joint was successfully added.');
+				// $this->Session->setFlash('The joint was successfully added.');
 				$this->redirect(array('action' => 'index'));
 			}
 
@@ -47,7 +47,7 @@ class JointsController extends AppController {
 			$this->data = $this->Joint->read();
 		} else {
 			if ($this->Joint->save($this->data)) {
-				$this->Session->setFlash('The joint has been successfully updated.');
+				// $this->Session->setFlash('The joint has been successfully updated.');
 				// $this->redirect(array('action' => 'index'));
 				$this->redirect('/joint/' . $id);
 			}

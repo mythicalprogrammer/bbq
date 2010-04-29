@@ -23,6 +23,12 @@ class JointsController extends AppController {
 		
 		$this->Joint->id = $id;
 		$this->set('joint', $this->Joint->read());
+		
+		// $jointInfo =$this->Joint->read();		
+		// $this->set('gc', $this->Joint->geocode($jointInfo['Joint']['address'] . ", " . $jointInfo['Joint']['city'] . ", " . $jointInfo['Joint']['state']));
+		
+		
+		
 	}
 	
 	function admin_add() {

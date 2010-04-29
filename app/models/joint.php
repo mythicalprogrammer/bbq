@@ -12,6 +12,17 @@ class Joint extends AppModel {
 		'country' => array('rule' => 'notEmpty')
 	);
 
+	var $actsAs = array('Geocoded' => array( 
+	    'key' => 'ABQIAAAA_iwTMO9zYpmDab6qmz5UzRTpJZEScOwrFi7gBYjoJDitheTOshQ6-RQZI3cQSkEikMuau0NH2wDXcg' 
+	));
+
+	function beforeSave() { 
+	    if ($coords = $this->geocode($this->data)) { 
+	        $this->set($coords); 
+	    } 
+	    return true; 
+	}
+
 }
 
 ?>

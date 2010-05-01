@@ -31,6 +31,15 @@ p {
 	margin: 0 0 10px 0;
 }
 
+i, em {
+	font-style: italic;
+}
+
+b, strong {
+	font-weight: bold;
+}
+
+
 /**
  * Selectors
  */
@@ -88,6 +97,27 @@ p {
 	width: 775px;
 	height: 45px;
 	background: url(../img/joint_search.png) top left no-repeat;
+}
+#joint-search-bar form {
+	margin: 0 0 0 390px;
+}
+#joint-search-bar .input input {
+	float: left;
+	width: 250px;
+	height: 25px;
+}
+#joint-search-bar .submit input {
+	float: left;
+	width: 75px;
+	height: 45px;
+	margin: -12px 0 0 5px;
+	background: url(../img/go.png) top left no-repeat;
+	border: none;
+	text-indent: -9999px;
+	cursor: pointer;
+}
+#joint-search-bar label {
+	display: none;
 }
 
 /**
@@ -158,6 +188,16 @@ p {
 	height: 350px;
 }
 
+/* Search Results */
+ol#searchResults {
+	float: left;
+	width: 350px;
+	margin: 0 0 0 30px;
+}
+#searchResults li {
+	list-style-type: decimal;
+	margin: 0 0 10px 0;
+}
 
 /* Flash Message */
 #flashMessage {

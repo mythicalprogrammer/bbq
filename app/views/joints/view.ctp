@@ -1,35 +1,27 @@
 <?php
-$jointName =  Sanitize::paranoid($joint['Joint']['name'], array('encode' => false));
+$jointName =  $joint['Joint']['name'];
 
-// Reference States Table
+// Reference States Listing Model to grab State Abbreviation
 foreach($states as $state) {
 	if ($state['Statelist']['id'] == $joint['Joint']['state_id']) {
 		$jointState = $state['Statelist']['name'];
 		$jointStateAbbr = $state['Statelist']['state_abbr'];
 	}
 }
-
+// Title Breadcrumb
 $this->pageTitle = $html->link("BBQ Joints", "/joints") . " > " . $html->link($jointState, "/joints/" . strtolower($jointStateAbbr));
 ?>
 <div class="bbqJoint">
-<?php 
-echo "				<h3>" . $jointName . "</h3>\n";
-
-echo "				" . $joint['Joint']['address'] . "<br/>\n";
-echo "				" . $joint['Joint']['city'] . ", ";
-// Reference States Table
-foreach($states as $state) {
-	if ($state['Statelist']['id'] == $joint['Joint']['state_id']) {
-		echo $state['Statelist']['state_abbr'] . " ";
-	}
-}
-echo $joint['Joint']['zip'] . "<br/>\n";
+				<h3><?php echo $jointName; ?></h3>
+				<?php echo $joint['Joint']['address']; ?><br/>
+				<?php echo $joint['Joint']['city'] . ", " . $jointStateAbbr . " " . $joint['Joint']['zip']; ?><br/>
+<?php // check phone
 if ($joint['Joint']['phone']) {
 	echo "				" . $joint['Joint']['phone'] . "<br/>\n";
 }
 if ($joint['Joint']['url']) {
 	echo "				";
-	// url parsing
+	// check url and parse if necessary
 	if(!substr_count($joint['Joint']['url'], "http://")) {
 		echo $html->link($joint['Joint']['url'], "http://" . $joint['Joint']['url']) . "<br/>\n";
 	}
@@ -37,8 +29,8 @@ if ($joint['Joint']['url']) {
 		echo $html->link($joint['Joint']['url'], $joint['Joint']['url']) . "<br/>\n";
 	}
 }
-// admin edit
 
+// ADMIN - edit
 if ($userCheck) {
 	echo "<br/>\n";
 	echo "[ " . $html->link('Edit this Joint', array('admin' => true, 'action'=>'edit', 'id'=>$joint['Joint']['id'])) . " ]<br/>";
@@ -47,32 +39,33 @@ if ($userCheck) {
 
 ?>
 			</div>
+			
 			<div id="jointMap"></div> 
 
-<script type="text/javascript"> 
+			<script type="text/javascript"> 
 
-if (GBrowserIsCompatible()) { 
+			if (GBrowserIsCompatible()) { 
 
-	function createMarker(point,html) {
-		var marker = new GMarker(point);
-		GEvent.addListener(marker, "click", function() {
-			marker.openInfoWindowHtml(html);
-		});
-		return marker;
-	}
+				function createMarker(point,html) {
+					var marker = new GMarker(point);
+					GEvent.addListener(marker, "click", function() {
+						marker.openInfoWindowHtml(html);
+					});
+					return marker;
+				}
 
-	var map = new GMap2(document.getElementById("jointMap"));
-	map.addControl(new GLargeMapControl());
-	map.addControl(new GMapTypeControl());
-	map.setCenter(new GLatLng(<?php echo $joint['Joint']['lat']?>,<?php echo $joint['Joint']['lon']?>),12);
+				var map = new GMap2(document.getElementById("jointMap"));
+				map.addControl(new GLargeMapControl());
+				map.addControl(new GMapTypeControl());
+				map.setCenter(new GLatLng(<?php echo $joint['Joint']['lat']?>,<?php echo $joint['Joint']['lon']?>),12);
 
 
-	var point = new GLatLng(<?php echo $joint['Joint']['lat']?>,<?php echo $joint['Joint']['lon']?>);
+				var point = new GLatLng(<?php echo $joint['Joint']['lat']?>,<?php echo $joint['Joint']['lon']?>);
 
-	var marker = createMarker(point)
-	map.addOverlay(marker);
-	// marker.openInfoWindowHtml("<?php echo $jointName?>");
+				var marker = createMarker(point)
+				map.addOverlay(marker);
+				// marker.openInfoWindowHtml("<?php echo $jointName?>");
 
-}
-</script>
+			}
+			</script>
 

@@ -5,6 +5,7 @@
 <head>
 	<?php echo $html->charset(); echo "\n" ?>
 	<?php echo $html->css('styles'); echo "\n"  ?>
+	<?php echo $html->css('admin_styles'); echo "\n"  ?>
 	<title>Kevin's BBQ Joints</title>
     <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA_iwTMO9zYpmDab6qmz5UzRTpJZEScOwrFi7gBYjoJDitheTOshQ6-RQZI3cQSkEikMuau0NH2wDXcg" type="text/javascript"></script> 
 
@@ -31,7 +32,7 @@
 	<div id="joint-search">
 		<div id="joint-search-bar">
 			<?php  
-			    echo $form->create("Search",array('action' => 'SearchByDistance')); 
+			    echo $form->create("Joint",array('action' => 'search')); 
 			    echo $form->input("q", array('label' => 'Search for')); 
 			    echo $form->end("Search"); 
 			?>
@@ -45,9 +46,11 @@
 		</div>
 
 		<div id="content">
-						
+									
 			<?php echo $content_for_layout; ?>
-
+			<br/><br/>
+			<?php echo "[ " . $html->link("Admin Panel", "/admin") . " ]"; ?>
+			<?php echo "[ " . $html->link("Log Out", "/admin/logout") . " ]"; ?>
 
 		</div>
 				

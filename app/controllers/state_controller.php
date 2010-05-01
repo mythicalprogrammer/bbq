@@ -1,7 +1,5 @@
 <?php
 
-App::import('Sanitize');
-
 class StateController extends AppController {
 
 	var $name = "States";

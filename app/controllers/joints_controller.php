@@ -1,7 +1,5 @@
 <?php
 
-App::import('Sanitize');
-
 class JointsController extends AppController {
 
 	var $name = 'Joints';
@@ -27,9 +25,8 @@ class JointsController extends AppController {
 		// $jointInfo =$this->Joint->read();		
 		// $this->set('gc', $this->Joint->geocode($jointInfo['Joint']['address'] . ", " . $jointInfo['Joint']['city'] . ", " . $jointInfo['Joint']['state']));
 		
-		
-		
 	}
+
 	
 	function admin_add() {
 		

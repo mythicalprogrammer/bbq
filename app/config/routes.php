@@ -37,6 +37,10 @@
  */
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
 	
+	// Search
+	Router::connect('/search', array('controller' => 'searches', 'action' => 'SearchByDistance'));
+		
+	// Admin
 	Router::connect('/admin/', array('controller' => 'users', 'action' => 'login'));
 	Router::connect('/admin/joints', array('controller' => 'users', 'action' => 'login'));
 	

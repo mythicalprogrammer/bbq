@@ -16,6 +16,8 @@ class SearchesController extends AppController {
 			// Get location of search input
 			$gc = $this->Joint->geocode($this->data['Search']['q']); 
 		
+			$this->set('location', $this->data['Search']['q']);
+		
 			// Search within 50 miles using Haversine formula
 			// Sort by distance, result up to 11 results
 			$this->set('results', $this->Joint->query("SELECT *,  ( 3959 * acos( cos( radians(". $gc['lat'] . ") ) * cos( radians( lat ) ) * cos( radians( lon ) - radians(" . $gc['lon'] . ") ) + sin( radians(" . $gc['lat'] . ") ) * sin( radians( lat ) ) ) ) AS distance FROM joints HAVING distance < 50 ORDER BY distance LIMIT 0 , 11;"));
@@ -28,9 +30,9 @@ class SearchesController extends AppController {
 			// if empty input, just return empty array
 			$this->set('results', Array());
 		}
-		
-	}
 	
+	}
+		
 }
 
 ?>

@@ -32,9 +32,10 @@
 	<div id="joint-search">
 		<div id="joint-search-bar">
 			<?php  
-			    echo $form->create("Joint",array('action' => 'search')); 
+			    //echo $form->create("Search",array('action' => 'SearchByDistance'));
+			    echo $form->create("Search",array('url' => '/search'));
 			    echo $form->input("q", array('label' => 'Search for')); 
-			    echo $form->end("Search"); 
+			    echo $form->end("Search");
 			?>
 		</div>
 	</div>
@@ -48,9 +49,10 @@
 		<div id="content">
 									
 			<?php echo $content_for_layout; ?>
-			<br/><br/>
-			<?php echo "[ " . $html->link("Admin Panel", "/admin") . " ]"; ?>
-			<?php echo "[ " . $html->link("Log Out", "/admin/logout") . " ]"; ?>
+			<div id="adminFooter">
+				<?php echo "[ " . $html->link("Admin Panel", "/admin") . " ]"; ?>
+				<?php echo "[ " . $html->link("Log Out", "/admin/logout") . " ]"; ?>
+			</div>
 
 		</div>
 				

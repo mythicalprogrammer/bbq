@@ -191,8 +191,8 @@ b, strong {
 /* Search Results */
 ol#searchResults {
 	float: left;
-	width: 350px;
-	margin: 0 0 0 30px;
+	width: 330px;
+	margin: 10px 0 0 30px;
 }
 #searchResults li {
 	list-style-type: decimal;
@@ -248,6 +248,12 @@ ol#searchResults {
 	background: url(../img/promo_box.png) top left no-repeat;
 	float: left;
 	margin: 0 0 15px 10px;
+}
+
+/* Admin Footer */
+#adminFooter {
+	clear: both;
+	padding: 15px 0 0 10px;
 }
 
 /**

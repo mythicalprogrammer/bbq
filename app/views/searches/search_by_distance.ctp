@@ -8,6 +8,9 @@ $this->pageTitle = "Search Results";
 	}
 	else {
 ?>
+
+<p>BBQ Joints near: <em><?php echo $location; ?></em></p>
+
 <ol id="searchResults">
 <?php 
 		foreach($results as $result) {

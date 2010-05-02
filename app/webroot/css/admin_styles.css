@@ -25,3 +25,9 @@
 	color: red;
 	clear: both;
 }
+
+/* Admin Footer */
+#adminFooter {
+	clear: both;
+	padding: 15px 0 0 10px;
+}

@@ -41,31 +41,32 @@ if ($userCheck) {
 			</div>
 			
 			<div id="jointMap"></div> 
-
+			
 			<script type="text/javascript"> 
+			
+				if (GBrowserIsCompatible()) { 
 
-			if (GBrowserIsCompatible()) { 
+					function createMarker(point,html) {
+						var marker = new GMarker(point);
+						GEvent.addListener(marker, "click", function() {
+							marker.openInfoWindowHtml(html);
+						});
+						return marker;
+					}
 
-				function createMarker(point,html) {
-					var marker = new GMarker(point);
-					GEvent.addListener(marker, "click", function() {
-						marker.openInfoWindowHtml(html);
-					});
-					return marker;
+					var map = new GMap2(document.getElementById("jointMap"));
+					map.addControl(new GLargeMapControl());
+					map.addControl(new GMapTypeControl());
+					map.setCenter(new GLatLng(<?php echo $joint['Joint']['lat']?>,<?php echo $joint['Joint']['lon']?>),12);
+
+
+					var point = new GLatLng(<?php echo $joint['Joint']['lat']?>,<?php echo $joint['Joint']['lon']?>);
+
+					var marker = createMarker(point)
+					map.addOverlay(marker);
+					// marker.openInfoWindowHtml("<?php echo $jointName?>");
+
 				}
-
-				var map = new GMap2(document.getElementById("jointMap"));
-				map.addControl(new GLargeMapControl());
-				map.addControl(new GMapTypeControl());
-				map.setCenter(new GLatLng(<?php echo $joint['Joint']['lat']?>,<?php echo $joint['Joint']['lon']?>),12);
-
-
-				var point = new GLatLng(<?php echo $joint['Joint']['lat']?>,<?php echo $joint['Joint']['lon']?>);
-
-				var marker = createMarker(point)
-				map.addOverlay(marker);
-				// marker.openInfoWindowHtml("<?php echo $jointName?>");
-
-			}
+				
 			</script>
 

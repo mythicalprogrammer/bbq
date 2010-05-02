@@ -48,9 +48,9 @@ if ($userCheck) {
 
 					function createMarker(point,html) {
 						var marker = new GMarker(point);
-						GEvent.addListener(marker, "click", function() {
-							marker.openInfoWindowHtml(html);
-						});
+						// GEvent.addListener(marker, "click", function() {
+						// 	marker.openInfoWindowHtml(html);
+						// });
 						return marker;
 					}
 
@@ -62,9 +62,8 @@ if ($userCheck) {
 
 					var point = new GLatLng(<?php echo $joint['Joint']['lat']?>,<?php echo $joint['Joint']['lon']?>);
 
-					var marker = createMarker(point)
+					var marker = createMarker(point);
 					map.addOverlay(marker);
-					// marker.openInfoWindowHtml("<?php echo $jointName?>");
 
 				}
 				

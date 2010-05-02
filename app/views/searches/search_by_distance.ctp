@@ -54,9 +54,25 @@ $this->pageTitle = "Search Results";
 
 					<?php
 					foreach($results as $result) {
+						
+						foreach($states as $state) {
+							if ($state['Statelist']['id'] == $result['joints']['state_id']) {
+								$jointStateAbbr = $state['Statelist']['state_abbr'];
+							}
+						}
+						
 						echo "var point = new GLatLng(" . $result['joints']['lat'] . "," . $result['joints']['lon'] . ");\n";
-						echo "var marker = createMarker(point);\n";
+
+						$windowInfo = "<strong>".$result['joints']['name']."</strong><br/>".$result['joints']['address']."<br/>".$result['joints']['city'] . ", " . $jointStateAbbr . " " . $result['joints']['zip'];
+
+						echo "var wInfo = \"" . $windowInfo . "\"\n";
+						echo "var marker = createMarker(point, wInfo);\n";
 						echo "map.addOverlay(marker);\n";
+						
+						?>
+
+					<?php 
+						
 					}
 
 					?>

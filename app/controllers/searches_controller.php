@@ -3,7 +3,7 @@
 class SearchesController extends AppController {
 
 	var $name = "Searches";
-	var $uses = array('Search', 'Joint', 'Statelist');
+	var $uses = array('Search', 'Joint', 'Statelist', 'SearchLog');
 
 	function index() {
 		$this->set('joints', $this->Joint->find('all'));
@@ -26,6 +26,13 @@ class SearchesController extends AppController {
 
 			// Grab States table
 			$states = $this->set('states', $this->Statelist->find('all'));
+
+			// Log each Search Query into Database
+			$this->SearchLog->Save(
+				array('query' => $this->data['Search']['q'],
+				'date' => date("Y-m-d H:i:s", time()),
+				'ip' => getenv("REMOTE_ADDR")
+				));
 		
 		}
 		else {

@@ -33,7 +33,16 @@ class JointsController extends AppController {
 		$states = $this->set('states', $this->Statelist->find('all'));
 		
 		if (!empty($this->data)) {
-			if ($this->Joint->save($this->data)) {
+
+			$addJoint = $this->data['Joint'];
+
+			// if all required BBQ Joint fields are not blank
+			// then geocode and merge into array
+			if($addJoint['name'] != "" && $addJoint['address'] != "" && $addJoint['city'] != "" && $addJoint['zip'] != "") {
+				$addJoint = array_merge($addJoint, $this->Joint->geocode($this->data));
+			}
+
+			if ($this->Joint->save($addJoint)) {
 				// $this->Session->setFlash('The joint was successfully added.');
 				$this->redirect(array('action' => 'index'));
 			}
@@ -55,6 +64,11 @@ class JointsController extends AppController {
 				$this->redirect('/joint/' . $id);
 			}
 		}
+	}
+	
+	function admin_delete($id = null) {
+		$this->Joint->delete($id);
+		$this->redirect(array('action'=>'index'));
 	}
 	
 }

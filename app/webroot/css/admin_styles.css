@@ -26,6 +26,16 @@
 	clear: both;
 }
 
+table#searchLog {
+	margin: 0 0 10px 0;
+}
+table#searchLog td, table#searchLog th {
+	padding: 2px 10px;
+}
+table#searchLog th {
+	font-weight: bold;
+}
+
 /* Admin Footer */
 #adminFooter {
 	clear: both;

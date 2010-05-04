@@ -6,7 +6,7 @@
 	<?php echo $html->charset(); echo "\n" ?>
 	<?php echo $html->css('styles'); echo "\n"  ?>
 	<?php echo $html->css('admin_styles'); echo "\n"  ?>
-	<title>Kevin's BBQ Joints</title>
+	<title>Kevin's BBQ Joints - <?php echo strip_tags($this->pageTitle); ?></title>
     <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA_iwTMO9zYpmDab6qmz5UzRTpJZEScOwrFi7gBYjoJDitheTOshQ6-RQZI3cQSkEikMuau0NH2wDXcg" type="text/javascript"></script> 
 
 </head>
@@ -21,11 +21,13 @@
 	<div id="nav">
 		<ul>
 			<li><?php echo $html->link('BBQ Joints', '/joints') ?></li>
+			<?php /*
 			<li><a href="#">BBQ Blogs</a></li>
 			<li><a href="#">Meat Joints</a></li>
 			<li><a href="#">Rubs & Sauces</a></li>
 			<li><a href="#">About</a></li>
 			<li><a href="#">Kevin's Blog</a></li>
+			*/ ?>
 		</ul>
 	</div>
 	

@@ -47,6 +47,10 @@
 	// Login, Logout
 	Router::connect('/login', array('controller' => 'users', 'action' => 'login'));
 	Router::connect('/admin/logout', array('controller' => 'users', 'action' => 'logout'));
+	
+	// Admin Search Log
+	// Router::connect('/admin/searchlog', array('controller' => 'searchlogs', 'action' => 'index'));
+
 
 	// BBQ Joints Landing Page
 	Router::connect('/joints/',array('controller'=>'state'));

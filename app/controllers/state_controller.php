@@ -17,8 +17,9 @@ class StateController extends AppController {
 		}
 		else
 		{
-			$this->Session->setFlash("something wrong happens!");
+			$this->Session->setFlash("error!");
 		}
+		
 	}
 	
 }

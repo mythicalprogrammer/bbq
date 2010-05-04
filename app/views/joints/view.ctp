@@ -32,9 +32,16 @@ if ($joint['Joint']['url']) {
 
 // ADMIN - edit
 if ($userCheck) {
-	echo "<br/>\n";
-	echo "[ " . $html->link('Edit this Joint', array('admin' => true, 'action'=>'edit', 'id'=>$joint['Joint']['id'])) . " ]<br/>";
-	echo "<br/>";
+	
+	echo "				<br/>\n";
+	// EDIT JOINT
+	echo "				[ " . $html->link('Edit this Joint', array('admin' => true, 'action'=>'edit', 'id'=>$joint['Joint']['id'])) . " ]<br/>\n";
+	echo "				<br/>\n";
+	// DELETE JOINT
+	// echo "<font color=red>DO NOT ACCIDENTALLY CLICK --> [ " . $html->link('Delete this Joint', array('admin' => true, 'action'=>'delete', 'id'=>$joint['Joint']['id'])) . " ]</font><br/>\n";
+
+	
+	echo "				<br/>\n";
 }
 
 ?>

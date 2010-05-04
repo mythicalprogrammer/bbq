@@ -17,12 +17,12 @@ class Joint extends AppModel {
 	));
 	
 	
-	function beforeSave() {
-	    if ($coords = $this->geocode($this->data)) { 
-	        $this->set($coords);
-	    } 
-	    return true; 
-	}
+	// function beforeSave() {
+	//     if ($coords = $this->geocode($this->data)) { 
+	//         $this->set($coords);
+	//     } 
+	//     return true; 
+	// }
 	
 
 }

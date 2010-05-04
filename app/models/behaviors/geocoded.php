@@ -88,7 +88,7 @@ class GeocodedBehavior extends ModelBehavior {
 		if (!$code = $model->Geocode->findByAddress(low($address))) {
 			if ($code = $this->_geocoords($model, $address)) {
 				$model->Geocode->create();
-				$model->Geocode->save(array('address' => low($address), 'lat' => $code[$fields[0]], 'lon' => $code[$fields[1]]));
+				// $model->Geocode->save(array('address' => low($address), 'lat' => $code[$fields[0]], 'lon' => $code[$fields[1]]));
 			}
 		} else {
 			$code = array($fields[0] => $code['Geocode']['lat'], $fields[1] => $code['Geocode']['lon']);

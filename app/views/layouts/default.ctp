@@ -25,8 +25,8 @@
 			<li><a href="#">Meat Joints</a></li>
 			<li><a href="#">Rubs & Sauces</a></li>
 			<li><a href="#">About</a></li>
-			<li><a href="#">Kevin's Blog</a></li>
 			*/ ?>
+			<li><a href="http://www.kevinsbbqjoints.com/blog">Kevin's Blog</a></li>
 		</ul>
 	</div>
 	
@@ -72,7 +72,7 @@
 			<li><a href="#">Meat Joints</a></li>
 			<li><a href="#">Rubs & Sauces</a></li>
 			<li><a href="#">About</a></li>
-			<li><a href="#">Kevin's Blog</a></li>
+			<li><a href="http://www.kevinsbbqjoints.com/blog">Kevin's Blog</a></li>
 		</ul>
 		
 		<div id="copyright">

@@ -22,5 +22,4 @@ echo "				" . $form->input('chain', array('options' => array(0 => "No", 1 => "Ye
 echo "				" . $form->end('Add Joint') . "\n";
 echo "			<br clear=\"both\"></div>\n";
 
-
 ?>

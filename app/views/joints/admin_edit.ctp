@@ -18,6 +18,7 @@ echo "				" . $form->input('zip', array('size' => 10)) . "\n";
 echo "				" . $form->input('country', array('options' => array("United States" =>"United States","Canada" => "Canada"))) . "\n";
 echo "				" . $form->input('phone') . "\n";
 echo "				" . $form->input('url', array('size' => 30)) . "\n";
+echo "				" . $form->input('chain', array('options' => array(0 => "No", 1 => "Yes"))) . "\n";
 echo "				" . $form->end('Edit Joint') . "\n";
 echo "			<br clear=\"both\"></div>\n";
 

@@ -30,6 +30,10 @@ if ($joint['Joint']['url']) {
 	}
 }
 
+if($joint['Joint']['chain']) {
+	echo "				" . $html->image('chain.png') . "\n";
+}
+
 // ADMIN - edit
 if ($userCheck) {
 	

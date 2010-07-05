@@ -3,8 +3,10 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<?php echo $html->charset(); echo "\n" ?>
-	<?php echo $html->css('styles'); echo "\n"  ?>
+	<?php echo $html->charset() . "\n"; ?>
+	<?php echo $html->css('styles') . "\n";  ?>
+	<?php echo $javascript->link('jquery-1.4.2.min.js') . "\n"; ?>
+	<?php echo $javascript->link('bbq.js') . "\n"; ?>
 	<title>Kevin's BBQ Joints - <?php echo strip_tags($this->pageTitle); ?></title>
     <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA_iwTMO9zYpmDab6qmz5UzRTpJZEScOwrFi7gBYjoJDitheTOshQ6-RQZI3cQSkEikMuau0NH2wDXcg" type="text/javascript"></script> 
 
@@ -34,7 +36,7 @@
 		<div id="joint-search-bar">
 			<?php  
 			    echo $form->create("Search",array('action' => 'SearchByDistance')); 
-			    echo $form->input("q", array('label' => 'Search for')); 
+			    echo $form->input("q", array('label' => 'Search for', 'value' => 'Street Address, City, State, or Zip'));
 			    echo $form->end("Search"); 
 			?>
 		</div>

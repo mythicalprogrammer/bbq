@@ -4,6 +4,7 @@
 class AppController extends Controller {
 	// class variables
 	var $_User = array();
+	var $helpers = array('Html', 'Form', 'Javascript');
 
 	/**
 	 * Before any Controller action
@@ -35,5 +36,6 @@ class AppController extends Controller {
 			$this->layout = 'admin';
 		}
 	}
+	
 }
 ?>

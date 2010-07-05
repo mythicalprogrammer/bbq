@@ -105,6 +105,10 @@ b, strong {
 	float: left;
 	width: 250px;
 	height: 25px;
+	color: #777;
+}
+#joint-search-bar .input input.focus {
+	color: #000;
 }
 #joint-search-bar .submit input {
 	float: left;

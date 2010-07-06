@@ -43,7 +43,7 @@
 	Router::connect('/search', array('controller' => 'searches', 'action' => 'SearchByDistance'));
 
 	// Contact
-	Router::connect('/contact', array('controller' => 'contact', 'action' => 'add'));
+	Router::connect('/contact', array('controller' => 'contact', 'action' => 'contact'));
 
 		
 	// Admin

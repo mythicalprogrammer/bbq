@@ -29,6 +29,7 @@
 			<li><a href="#">About</a></li>
 			*/ ?>
 			<li><a href="http://www.kevinsbbqjoints.com/blog">Kevin's Blog</a></li>
+			<li><?php echo $html->link('Contact', '/contact') ?></li>
 		</ul>
 	</div>
 	
@@ -68,14 +69,14 @@
 	*/ ?>
 	
 	<div id="footer">
-		<ul id="nav-footer">
+		<!--- <ul id="nav-footer">
 			<li><a href="#">BBQ Joints</a></li>
 			<li><a href="#">BBQ Blogs</a></li>
 			<li><a href="#">Meat Joints</a></li>
 			<li><a href="#">Rubs & Sauces</a></li>
 			<li><a href="#">About</a></li>
 			<li><a href="http://www.kevinsbbqjoints.com/blog">Kevin's Blog</a></li>
-		</ul>
+		</ul> --->
 		
 		<div id="copyright">
 			Copyright © 2009-<?php echo date('Y'); ?> Kevin's BBQ Joints

@@ -211,6 +211,14 @@ ol#searchResults {
 	margin: 0 0 5px 0;
 }
 
+.error {
+	color: #ff0000;
+}
+
+.note {
+	font-style: italic;
+}
+
 .input {
 	padding: 0 0 5px 0;
 }
@@ -254,6 +262,17 @@ ol#searchResults {
 	margin: 0 0 15px 10px;
 }
 
+/* Contact Form */
+#ContactForm label {
+	font-weight: bold;
+	display: block;
+}
+#ContactForm input {
+	margin: 0 0 10px 0;
+}
+#ContactForm .submit {
+	margin: 10px 0 0 0;
+}
 
 /**
  * Footer

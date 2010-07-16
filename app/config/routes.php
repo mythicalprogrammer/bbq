@@ -72,7 +72,6 @@
 	App::import('model', 'Page');
 	$Page = new Page();
 	$pages = $Page->find('list', array('fields' => array('id', 'slug')));
-	// Router::connect('/:slug/*', array('controller' => 'pages'), array('page' => implode($pages, '|')));	
 	Router::connect('/:slug/*',
 	  array('controller' => 'pages', 'action' => 'index'),
 	  array(

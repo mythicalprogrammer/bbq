@@ -7,7 +7,7 @@ class SearchlogController extends AppController {
 
 
 	function admin_index() {
-		$joints = $this->set('searchlogs', $this->Searchlog->find('all'));
+		$joints = $this->set('searchlogs', $this->Searchlog->find('all', array('order' =>'date DESC')));
 	}
 
 }

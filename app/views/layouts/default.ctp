@@ -53,7 +53,6 @@
 						
 			<?php echo $content_for_layout; ?>
 
-
 		</div>
 				
 		<div id="content-footer"></div>

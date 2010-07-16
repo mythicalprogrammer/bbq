@@ -68,5 +68,16 @@
 	// BBQ Joint Listing
 	Router::connect('/joint/:id/:slug', array('controller' => 'joints', 'action' => 'view'), array('pass' => array('id', 'slug'), 'id' => '[\d]+' ));
 	
+	// Static Pages
+	App::import('model', 'Page');
+	$Page = new Page();
+	$pages = $Page->find('list', array('fields' => array('id', 'slug')));
+	// Router::connect('/:slug/*', array('controller' => 'pages'), array('page' => implode($pages, '|')));	
+	Router::connect('/:slug/*',
+	  array('controller' => 'pages', 'action' => 'index'),
+	  array(
+	    'pass' => array('slug'),
+	    'slug' => implode($pages, '|')
+	));
 	
 ?>

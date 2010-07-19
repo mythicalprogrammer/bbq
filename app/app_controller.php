@@ -5,12 +5,16 @@ class AppController extends Controller {
 	// class variables
 	var $_User = array();
 	var $helpers = array('Html', 'Form', 'Javascript');
+	// grab model for Pages
+	var $uses = array('Pages');
 
 	/**
 	 * Before any Controller action
 	 */
 	
 	function beforeFilter() {
+		// Pages
+		$this->set('pages', $this->Pages->find("all"));
 	
 		// set user vars
 		$this->set('userCheck', $this->Session->check('User'));

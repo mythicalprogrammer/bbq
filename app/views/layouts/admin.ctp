@@ -23,8 +23,8 @@
 	<div id="nav">
 		<ul>
 			<li><?php echo $html->link('BBQ Joints', '/joints') ?></li>
-			<?php foreach($pages[0] as $page) {
-				echo "<li><a href=\"/bbq/". $page['slug'] ."\">".$page['title']."</li>\n";
+			<?php foreach($pages as $page) {
+				echo "<li><a href=\"/bbq/". $page["Pages"]['slug'] ."\">".$page["Pages"]['title']."</li>\n";
 			} ?>
 			<li><a href="http://www.kevinsbbqjoints.com/blog">Kevin's Blog</a></li>
 		</ul>
